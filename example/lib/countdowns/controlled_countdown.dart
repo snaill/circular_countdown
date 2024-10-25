@@ -1,13 +1,12 @@
 import 'package:circular_countdown/circular_countdown.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:timer_controller/timer_controller.dart';
 
 class ControlledCountdownPage extends StatelessWidget {
   const ControlledCountdownPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +32,7 @@ class ControlledCountdownPage extends StatelessWidget {
 }
 
 class _Countdowns extends StatefulWidget {
-  const _Countdowns({
-    Key? key,
-  }) : super(key: key);
-
+  const _Countdowns();
   @override
   __CountdownsState createState() => __CountdownsState();
 }
@@ -64,7 +60,7 @@ class __CountdownsState extends State<_Countdowns> {
       listener: (context, timerValue) {
         ScaffoldMessenger.of(context).showSnackBar(
           _StatusSnackBar(
-            'Status: ${describeEnum(timerValue.status)}',
+            'Status: ${timerValue.status}',
           ),
         );
       },

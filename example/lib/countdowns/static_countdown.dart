@@ -1,11 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:circular_countdown/circular_countdown.dart';
-import 'package:gap/gap.dart';
+import 'package:flutter/material.dart';
 
 class StaticCountdownPage extends StatelessWidget {
-  const StaticCountdownPage({
-    Key? key,
-  }) : super(key: key);
+  const StaticCountdownPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +13,16 @@ class StaticCountdownPage extends StatelessWidget {
         elevation: 0,
       ),
       backgroundColor: Colors.grey[900],
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(40),
+            padding: EdgeInsets.all(40),
             child: Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
               alignment: WrapAlignment.center,
               spacing: 40,
               runSpacing: 40,
-              children: const <Widget>[
+              children: <Widget>[
                 CircularCountdown(
                   diameter: 250,
                   gapFactor: 2,

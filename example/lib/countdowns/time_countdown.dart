@@ -1,11 +1,8 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:circular_countdown/circular_countdown.dart';
+import 'package:flutter/material.dart';
 
 class TimeCountdownPage extends StatefulWidget {
-  const TimeCountdownPage({
-    Key? key,
-  }) : super(key: key);
+  const TimeCountdownPage({super.key});
   @override
   _TimeCountdownPageState createState() => _TimeCountdownPageState();
 }
@@ -40,6 +37,7 @@ class _TimeCountdownPageState extends State<TimeCountdownPage> {
                 description = 'Finished';
                 setState(() {});
               },
+              // ignore: avoid_print
               onCanceled: (unit, remainingTime) => print(
                 'Canceled at ${_formatTime(unit, remainingTime)}',
               ),
@@ -62,5 +60,5 @@ class _TimeCountdownPageState extends State<TimeCountdownPage> {
   }
 
   String _formatTime(CountdownUnit unit, int remainingTime) =>
-      '$remainingTime ${describeEnum(unit)}${remainingTime > 1 ? 's' : ''}';
+      '$remainingTime $unit${remainingTime > 1 ? 's' : ''}';
 }
